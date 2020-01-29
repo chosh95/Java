@@ -1,0 +1,10 @@
+package objective;
+
+public class Student {
+
+	int age;
+	int StudentID;
+	String name;
+	String address;
+
+}
