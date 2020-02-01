@@ -2,10 +2,10 @@ package card;
 
 public class Card {
 	private static int Number = 10001;
-	public int cardId;
+	private int cardId;
 	
 	public Card() {
-		cardId = Number++;
+		this.cardId = Number++;
 	}
 	public int getCardNumber() {
 		return this.cardId;
