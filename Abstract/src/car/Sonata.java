@@ -1,0 +1,20 @@
+package car;
+
+public class Sonata extends Car{
+
+	@Override
+	public void start() {
+		System.out.println("Avante Ω√µø¿ª ƒ’¥œ¥Ÿ.");		
+	}
+
+	@Override
+	public void drive() {
+		System.out.println("Avante ¥ﬁ∏≥¥œ¥Ÿ.");		
+	}
+
+	@Override
+	public void stop() {
+		System.out.println("Avante ∏ÿ√‰¥œ¥Ÿ.");		
+	}
+
+}

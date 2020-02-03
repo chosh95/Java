@@ -4,4 +4,6 @@
 <fullyQualifiedTypeName name="java.util.Scanner"/>
 <fullyQualifiedTypeName name="coffee.StarCoffee"/>
 <fullyQualifiedTypeName name="inheritance.VIPCustomer"/>
+<fullyQualifiedTypeName name="scheduler.LeastJob"/>
+<fullyQualifiedTypeName name="sort.HeapSort"/>
 </qualifiedTypeNameHistroy>
