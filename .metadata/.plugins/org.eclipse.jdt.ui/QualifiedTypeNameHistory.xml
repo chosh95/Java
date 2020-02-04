@@ -6,4 +6,9 @@
 <fullyQualifiedTypeName name="inheritance.VIPCustomer"/>
 <fullyQualifiedTypeName name="scheduler.LeastJob"/>
 <fullyQualifiedTypeName name="sort.HeapSort"/>
+<fullyQualifiedTypeName name="treeSet.TreeSet"/>
+<fullyQualifiedTypeName name="java.util.TreeSet"/>
+<fullyQualifiedTypeName name="java.lang.Comparable"/>
+<fullyQualifiedTypeName name="collection.Member"/>
+<fullyQualifiedTypeName name="java.util.Iterator"/>
 </qualifiedTypeNameHistroy>
