@@ -1,9 +1,0 @@
-package operator;
-
-public class Docoding {
-
-	public static void main(String[] args) {
-		
-	}
-
-}
