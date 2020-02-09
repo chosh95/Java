@@ -21,4 +21,11 @@
 <fullyQualifiedTypeName name="java.util.function.BinaryOperator"/>
 <fullyQualifiedTypeName name="java.util.Arrays"/>
 <fullyQualifiedTypeName name="java.util.stream.Stream"/>
+<fullyQualifiedTypeName name="java.lang.ArrayIndexOutOfBoundsException"/>
+<fullyQualifiedTypeName name="exception.AutoCloseObj"/>
+<fullyQualifiedTypeName name="java.io.FileNotFoundException"/>
+<fullyQualifiedTypeName name="java.lang.ClassNotFoundException"/>
+<fullyQualifiedTypeName name="java.lang.Exception"/>
+<fullyQualifiedTypeName name="exception.IDFormatTest"/>
+<fullyQualifiedTypeName name="exception.IDFormatException"/>
 </qualifiedTypeNameHistroy>
