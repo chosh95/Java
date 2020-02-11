@@ -28,9 +28,23 @@
 <fullyQualifiedTypeName name="exception.IDFormatTest"/>
 <fullyQualifiedTypeName name="exception.IDFormatException"/>
 <fullyQualifiedTypeName name="java.io.InputStreamReader"/>
-<fullyQualifiedTypeName name="java.io.FileInputStream"/>
 <fullyQualifiedTypeName name="java.io.File"/>
-<fullyQualifiedTypeName name="java.io.FileOutputStream"/>
-<fullyQualifiedTypeName name="java.io.IOException"/>
+<fullyQualifiedTypeName name="decorator.FileCopy"/>
+<fullyQualifiedTypeName name="stream.FileInput"/>
+<fullyQualifiedTypeName name="java.io.BufferedInputStream"/>
+<fullyQualifiedTypeName name="java.io.BufferedOutputStream"/>
+<fullyQualifiedTypeName name="java.io.DataInputStream"/>
+<fullyQualifiedTypeName name="java.io.DataOutputStream"/>
 <fullyQualifiedTypeName name="java.lang.System"/>
+<fullyQualifiedTypeName name="java.io.Serializable"/>
+<fullyQualifiedTypeName name="java.io.FileOutputStream"/>
+<fullyQualifiedTypeName name="java.lang.Object"/>
+<fullyQualifiedTypeName name="org.omg.CORBA.portable.OutputStream"/>
+<fullyQualifiedTypeName name="java.io.IOException"/>
+<fullyQualifiedTypeName name="java.io.FileInputStream"/>
+<fullyQualifiedTypeName name="java.io.ObjectOutputStream"/>
+<fullyQualifiedTypeName name="java.io.Externalizable"/>
+<fullyQualifiedTypeName name="others.RandomAccessFile"/>
+<fullyQualifiedTypeName name="coffee.Decorator"/>
+<fullyQualifiedTypeName name="coffee.KenyaAmericano"/>
 </qualifiedTypeNameHistroy>
