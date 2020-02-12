@@ -12,7 +12,6 @@
 <fullyQualifiedTypeName name="java.util.Iterator"/>
 <fullyQualifiedTypeName name="innerclass.OutClass.InClass"/>
 <fullyQualifiedTypeName name="innerclass.OutClass.InStaticClass"/>
-<fullyQualifiedTypeName name="java.lang.Runnable"/>
 <fullyQualifiedTypeName name="java.lang.FunctionalInterface"/>
 <fullyQualifiedTypeName name="lambda.StringConcat"/>
 <fullyQualifiedTypeName name="java.lang.Override"/>
@@ -47,4 +46,8 @@
 <fullyQualifiedTypeName name="others.RandomAccessFile"/>
 <fullyQualifiedTypeName name="coffee.Decorator"/>
 <fullyQualifiedTypeName name="coffee.KenyaAmericano"/>
+<fullyQualifiedTypeName name="java.lang.Runnable"/>
+<fullyQualifiedTypeName name="thread.TerminateThread"/>
+<fullyQualifiedTypeName name="thread.FastLibrary"/>
+<fullyQualifiedTypeName name="thread.LibraryMain"/>
 </qualifiedTypeNameHistroy>
