@@ -1,0 +1,14 @@
+package others;
+
+import java.io.RandomAccessFile;
+
+public class RandomAccessFileTest {
+
+	public static void main(String[] args) {
+
+		RandomAccessFile rf = new RandomAccessFile("random.txt","rw");
+		rf.wrietInt(100);
+		
+	}
+
+}

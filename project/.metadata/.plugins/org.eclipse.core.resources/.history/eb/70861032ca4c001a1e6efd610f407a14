@@ -1,0 +1,23 @@
+package decorator;
+
+import java.io.Serializable;
+
+class Person implements Serializable{	
+	String name;
+	String job;
+	public Person(String name, String job) {
+		this.name = name;
+		this.job = job;
+	}
+	public String toString() {
+		return this.name + " " + this.job;
+	}
+}
+
+public class SerializationTest {
+	
+	public static void main(String[] args) {
+
+	}
+
+}

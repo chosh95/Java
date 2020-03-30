@@ -1,0 +1,21 @@
+package thread;
+
+class Bank{
+	private int money = 10000;
+	public void saveMoney(int save) {
+		int m = this.getMoney();
+	}
+	
+	int getMoney() {
+		return this.money;
+	}
+}
+
+public class SyncTest {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

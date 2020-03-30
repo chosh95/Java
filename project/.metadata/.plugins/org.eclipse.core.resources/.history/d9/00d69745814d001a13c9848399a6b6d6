@@ -1,0 +1,29 @@
+package thread;
+
+class Bank extends Thread{
+	private int money = 10000;
+	public void saveMoney(int save) {
+		int m = this.getMoney();
+		try {
+			Thread.sleep(3000);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		setMoney(m + svae)
+	}
+	
+	int getMoney() {
+		return this.money;
+	}
+}
+
+public class SyncTest {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

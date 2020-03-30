@@ -1,0 +1,7 @@
+package coffee;
+
+public class Latte extends Decorator{
+	public Latte(Coffee coffee) {
+		super(coffee);
+	}
+}

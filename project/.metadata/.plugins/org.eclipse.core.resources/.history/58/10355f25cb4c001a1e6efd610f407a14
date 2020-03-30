@@ -1,0 +1,62 @@
+package decorator;
+
+import java.io.Externalizable;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.ObjectInput;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutput;
+import java.io.ObjectOutputStream;
+import java.io.Serializable;
+
+class Person implements Serializable, Externalizable{	
+	String name;
+	String job;
+	public Person(String name, String job) {
+		this.name = name;
+		this.job = job;
+	}
+	public String toString() {
+		return this.name + " " + this.job;
+	}
+	@Override
+	public void readExternal(ObjectInput in) throws IOException, ClassNotFoundException {
+		System.out.println(in);
+	}
+	@Override
+	public void writeExternal(ObjectOutput out) throws IOException {
+		System.out.println(this);		
+	}
+}
+
+public class SerializationTest {
+	
+	public static void main(String[] args) throws FileNotFoundException, IOException {
+
+		Person PersonLee = new Person("Lee", "Engineer");
+		Person PersonKim = new Person("Kim","teacher");
+		try(FileOutputStream fos = new FileOutputStream("serial.dat");
+			ObjectOutputStream oos = new ObjectOutputStream(fos)){
+			oos.writeObject(PersonLee);
+			oos.writeObject(PersonKim);
+			
+		}catch(IOException e) {
+			System.out.println(e);
+		}
+		
+		try(FileInputStream fis = new FileInputStream("serial.dat");
+			ObjectInputStream ois = new ObjectInputStream(fis)){
+			
+			Person p1 = (Person)ois.readObject();
+			Person p2 = (Person)ois.readObject();
+			p1.readExternal(p1);
+			System.out.println(p1);
+			System.out.println(p2);
+		}catch(Exception e) {
+			System.out.println(e);
+		}
+	}
+
+}

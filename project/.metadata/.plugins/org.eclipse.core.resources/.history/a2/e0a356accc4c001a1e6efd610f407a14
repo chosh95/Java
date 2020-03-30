@@ -1,0 +1,21 @@
+package others;
+
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.io.RandomAccessFile;
+
+public class RandomAccessFileTest {
+
+	public static void main(String[] args) throws IOException {
+
+		RandomAccessFile rf = new RandomAccessFile("random.txt","rw");
+		rf.writeInt(100);
+		rf.writeDouble(3.14);
+		rf.writeUTF("HI Hello");
+		
+		System.out.println(rf.getFilePointer());
+		rf.seek(0);;
+		
+	}
+
+}

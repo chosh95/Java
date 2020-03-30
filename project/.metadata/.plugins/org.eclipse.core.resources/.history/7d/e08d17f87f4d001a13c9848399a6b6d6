@@ -1,0 +1,16 @@
+package thread;
+
+public class TerminateThread extends Thread{
+
+	private boolean flag = false;
+	int i;
+	public void run() {
+		while(!flag) {
+			sleep(100);
+		}
+	}
+	public static void main(String[] args) {
+		TerminateThread t
+	}
+
+}

@@ -1,0 +1,10 @@
+package coffee;
+
+public abstract class Coffee {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

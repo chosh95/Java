@@ -1,0 +1,25 @@
+package thread;
+
+import java.util.ArrayList;
+
+class FastLibrary{
+	public ArrayList<String> books = new ArrayList<String>();
+	
+	public FastLibrary() {
+		books.add("ลยน้ป๊ธฦ 1"); books.add("ลยน้ป๊ธฦ 2"); books.add("ลยน้ป๊ธฦ 3");
+		books.add("ลยน้ป๊ธฦ 4"); books.add("ลยน้ป๊ธฦ 5"); books.add("ลยน้ป๊ธฦ 6");
+	}
+	
+	public String lendBook() {
+		String title = books.remove(0);
+		return title;
+	}
+}
+
+public class LibraryMain {
+
+	public static void main(String[] args) {
+
+	}
+
+}

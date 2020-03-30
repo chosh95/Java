@@ -1,0 +1,43 @@
+package thread;
+
+class MyThread implements Runnable{
+	public void run() {
+		int i;
+		for(i=0;i<=200;i++) {
+			System.out.print(i + "\t");
+			
+			try {
+				Thread.sleep(10);
+			} catch (InterruptedException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
+	}
+}
+
+public class ThreadTest {
+
+	public static void main(String[] args) {
+
+		System.out.println("start");
+		/* extends Thread 로 사용 가능한 방법.
+		MyThread th1 = new MyThread();
+		MyThread th2 = new MyThread();
+		
+		th1.start();
+		th2.start(); */
+		
+		//implements Runnable로 사용
+		MyThread run1 = new MyThread();
+		Thread th1 = new Thread(run1);
+		th1.start();
+		
+		MyThread run2 = new MyThread();
+		Thread th2 = new Thread(run2);
+		th2.start();
+		
+		System.out.println("end");
+	}
+
+}

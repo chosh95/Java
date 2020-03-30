@@ -1,0 +1,19 @@
+package decorator;
+
+public class SerializationTest {
+
+class Person{	
+	String name;
+	String job;
+	public Person(String name, String job) {
+		this.name = name;
+		this.job = job;
+	}
+}
+	
+	
+	public static void main(String[] args) {
+
+	}
+
+}
