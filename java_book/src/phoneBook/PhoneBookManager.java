@@ -12,15 +12,51 @@ public class PhoneBookManager {
 		phoneBook = new PhoneInfo[100];
 	}
 	
-	public void PhoneDataInput() {
-		System.out.println("데이터 입력을 시작합니다.\n이름 : ");
+	public PhoneInfo inputFriendInfo() {
+		System.out.println("이름 : ");
 		String name = sc.nextLine();
 		System.out.println("전화번호 : ");
 		String phoneNumber = sc.nextLine();
-		System.out.println("생년월일 : ");
-		String birthday = sc.nextLine();
+		return new PhoneInfo(name,phoneNumber);
+	}
+	
+	public PhoneUnivInfo inputUnivFriendInfo() {
+		System.out.println("이름 : ");
+		String name = sc.nextLine();
+		System.out.println("전화번호 : ");
+		String phoneNumber = sc.nextLine();
+		System.out.println("학과 : ");
+		String major = sc.nextLine();
+		System.out.println("학년 : ");
+		int year = sc.nextInt();
+		sc.nextLine();
+		return new PhoneUnivInfo(name,phoneNumber,major,year);
+	}
+	
+	public PhoneCompanyInfo inputCompanyFriendInfo() {
+		System.out.println("이름 : ");
+		String name = sc.nextLine();
+		System.out.println("전화번호 : ");
+		String phoneNumber = sc.nextLine();
+		System.out.println("회사 : ");
+		String company = sc.nextLine();
+		return new PhoneCompanyInfo(name,phoneNumber,company);
+	}
+	
+	public void PhoneDataInput() {
+		System.out.println("데이터 입력을 시작합니다.\n1. 일반, 2. 대학, 3. 회사 ");
+		System.out.println("선택>>");
+		int opt = sc.nextInt();
+		sc.nextLine();
+		PhoneInfo info;
+		if(opt==1) 
+			info = inputFriendInfo();
+		else if(opt==2) 
+			info = inputUnivFriendInfo();
+		else 
+			info = inputCompanyFriendInfo();
 		
-		phoneBook[idx++] = new PhoneInfo(name,phoneNumber,birthday);
+		phoneBook[idx++] = info;
 		System.out.println("데이터 입력이 완료되었습니다.");
 	}
 	
