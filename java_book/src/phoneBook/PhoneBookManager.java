@@ -8,6 +8,13 @@ public class PhoneBookManager {
 	private int idx = 0;
 	private PhoneInfo[] phoneBook;
 	
+	static PhoneBookManager inst =  null;
+	public static PhoneBookManager createManagerInst() {
+		if(inst == null)
+			inst = new PhoneBookManager();
+		return inst;
+	}
+	
 	public PhoneBookManager(){
 		phoneBook = new PhoneInfo[100];
 	}
@@ -48,12 +55,12 @@ public class PhoneBookManager {
 		System.out.println("¼±ÅÃ>>");
 		int opt = sc.nextInt();
 		sc.nextLine();
-		PhoneInfo info;
-		if(opt==1) 
+		PhoneInfo info = null;
+		if(opt==INPUT_SELECT.NORMAL) 
 			info = inputFriendInfo();
-		else if(opt==2) 
+		else if(opt==INPUT_SELECT.UNIV) 
 			info = inputUnivFriendInfo();
-		else 
+		else if(opt==INPUT_SELECT.COMPANY)
 			info = inputCompanyFriendInfo();
 		
 		phoneBook[idx++] = info;

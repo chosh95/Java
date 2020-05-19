@@ -18,16 +18,16 @@ public class phoneMain {
 		
 		while(true) {
 			int opt = inputData();
-			if(opt==1) {
+			if(opt==INIT_MENU.INPUT) {
 				manager.PhoneDataInput();
 			}
-			else if(opt==2) {
+			else if(opt==INIT_MENU.SEARCH) {
 				manager.PhoneDataSearch();
 			}
-			else if(opt==3) {
+			else if(opt==INIT_MENU.DELETE) {
 				manager.PhoneDataDelete();
 			}
-			else if(opt==4) {
+			else if(opt==INIT_MENU.EXIT) {
 				System.out.println("프로그램을 종료합니다.");
 				break;
 			}
