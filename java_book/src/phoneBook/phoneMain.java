@@ -17,19 +17,29 @@ public class phoneMain {
 		PhoneBookManager manager = new PhoneBookManager();
 		
 		while(true) {
-			int opt = inputData();
-			if(opt==INIT_MENU.INPUT) {
-				manager.PhoneDataInput();
+			
+			try {
+				int opt = inputData();
+				if(opt<INIT_MENU.INPUT || opt>INIT_MENU.EXIT)
+					throw new MenuChoiceException(opt);
+				
+				if(opt==INIT_MENU.INPUT) {
+					manager.PhoneDataInput();
+				}
+				else if(opt==INIT_MENU.SEARCH) {
+					manager.PhoneDataSearch();
+				}
+				else if(opt==INIT_MENU.DELETE) {
+					manager.PhoneDataDelete();
+				}
+				else if(opt==INIT_MENU.EXIT) {
+					System.out.println("프로그램을 종료합니다.");
+					break;
+				}
 			}
-			else if(opt==INIT_MENU.SEARCH) {
-				manager.PhoneDataSearch();
-			}
-			else if(opt==INIT_MENU.DELETE) {
-				manager.PhoneDataDelete();
-			}
-			else if(opt==INIT_MENU.EXIT) {
-				System.out.println("프로그램을 종료합니다.");
-				break;
+			catch(MenuChoiceException e) {
+				e.showException();
+				System.out.println("메뉴 선택을 처음부터 다시 진행합니다.\n");
 			}
 		}
 		

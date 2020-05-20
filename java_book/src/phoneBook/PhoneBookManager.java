@@ -50,12 +50,16 @@ public class PhoneBookManager {
 		return new PhoneCompanyInfo(name,phoneNumber,company);
 	}
 	
-	public void PhoneDataInput() {
+	public void PhoneDataInput() throws MenuChoiceException {
 		System.out.println("데이터 입력을 시작합니다.\n1. 일반, 2. 대학, 3. 회사 ");
 		System.out.println("선택>>");
 		int opt = sc.nextInt();
 		sc.nextLine();
 		PhoneInfo info = null;
+		
+		if(opt<INPUT_SELECT.NORMAL || opt>INPUT_SELECT.COMPANY)
+			throw new MenuChoiceException(opt);
+		
 		if(opt==INPUT_SELECT.NORMAL) 
 			info = inputFriendInfo();
 		else if(opt==INPUT_SELECT.UNIV) 
@@ -64,7 +68,7 @@ public class PhoneBookManager {
 			info = inputCompanyFriendInfo();
 		
 		phoneBook[idx++] = info;
-		System.out.println("데이터 입력이 완료되었습니다.");
+		System.out.println("데이터 입력이 완료되었습니다.\n");
 	}
 	
 	public void PhoneDataSearch() {
@@ -73,10 +77,10 @@ public class PhoneBookManager {
 		int index = FindData(name);
 		if(index!=-1) {
 			phoneBook[index].showInfo();
-			System.out.println("데이터 검색이 완료되었습니다.");
+			System.out.println("데이터 검색이 완료되었습니다.\n");
 		}
 		else 
-			System.out.println("없는 데이터 입니다.");
+			System.out.println("없는 데이터 입니다.\n");
 	}
 	
 	public void PhoneDataDelete() {
@@ -88,10 +92,10 @@ public class PhoneBookManager {
 				phoneBook[i] = phoneBook[i+1];
 			
 			idx--;
-			System.out.println("데이터 삭제가 완료되었습니다.");
+			System.out.println("데이터 삭제가 완료되었습니다.\n");
 		}
 		else 
-			System.out.println("없는 데이터 입니다.");
+			System.out.println("없는 데이터 입니다.\n");
 	}
 	
 	public int FindData(String name) {
