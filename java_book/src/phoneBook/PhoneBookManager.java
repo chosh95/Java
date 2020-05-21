@@ -1,22 +1,19 @@
 package phoneBook;
 
+import java.util.HashSet;
+import java.util.Iterator;
 import java.util.Scanner;
 
 public class PhoneBookManager {
 	
 	static Scanner sc = new Scanner(System.in);
-	private int idx = 0;
-	private PhoneInfo[] phoneBook;
+	private HashSet<PhoneInfo> phoneBook = new HashSet<PhoneInfo>();
 	
 	static PhoneBookManager inst =  null;
 	public static PhoneBookManager createManagerInst() {
 		if(inst == null)
 			inst = new PhoneBookManager();
 		return inst;
-	}
-	
-	public PhoneBookManager(){
-		phoneBook = new PhoneInfo[100];
 	}
 	
 	public PhoneInfo inputFriendInfo() {
@@ -67,16 +64,19 @@ public class PhoneBookManager {
 		else if(opt==INPUT_SELECT.COMPANY)
 			info = inputCompanyFriendInfo();
 		
-		phoneBook[idx++] = info;
-		System.out.println("데이터 입력이 완료되었습니다.\n");
+		boolean isPossible = phoneBook.add(info);
+		if(isPossible==true)
+			System.out.println("데이터 입력이 완료되었습니다.\n");
+		else
+			System.out.println("이미 저장된 데이터입니다. \n");
 	}
 	
 	public void PhoneDataSearch() {
 		System.out.println("데이터 검색을 시작합니다.\n이름 : ");
 		String name = sc.nextLine();
-		int index = FindData(name);
-		if(index!=-1) {
-			phoneBook[index].showInfo();
+		PhoneInfo info = FindData(name);
+		if(info!=null) {
+			info.showInfo();
 			System.out.println("데이터 검색이 완료되었습니다.\n");
 		}
 		else 
@@ -86,24 +86,29 @@ public class PhoneBookManager {
 	public void PhoneDataDelete() {
 		System.out.println("데이터 삭제를 시작합니다.\n이름 : ");
 		String name = sc.nextLine();
-		int index = FindData(name);
-		if(index!=-1) {
-			for(int i=index;i<idx;i++) 
-				phoneBook[i] = phoneBook[i+1];
-			
-			idx--;
-			System.out.println("데이터 삭제가 완료되었습니다.\n");
-		}
-		else 
+		PhoneInfo info = FindData(name);
+		if(info==null)
 			System.out.println("없는 데이터 입니다.\n");
-	}
-	
-	public int FindData(String name) {
-		for(int i = 0; i<idx;i++) {
-			if(phoneBook[i].name.equals(name)) {
-				return i;
+		else {
+			Iterator<PhoneInfo> iter = phoneBook.iterator();
+			while(iter.hasNext()) {
+				PhoneInfo tmp = iter.next();
+				if(name.compareTo(tmp.name)==0) {
+					iter.remove();
+					System.out.println("데이터 삭제가 완료되었습니다.\n");
+					break;
+				}
 			}
 		}
-		return -1;
+	}
+	
+	public PhoneInfo FindData(String name) {
+		Iterator<PhoneInfo> iter = phoneBook.iterator();
+		while(iter.hasNext()) {
+			PhoneInfo tmp = iter.next();
+			if(name.compareTo(tmp.name)==0)
+				return tmp;
+		}
+		return null;
 	}
 }

@@ -14,4 +14,16 @@ public class PhoneInfo {
 		System.out.println("이름 : " + name);
 		System.out.println("전화번호 : " + phoneNumber);
 	}
+	
+	public int hashCode() {
+		return name.hashCode();
+	}
+	
+	public boolean equals(Object obj) {
+		PhoneInfo inst = (PhoneInfo)obj;
+		if(name.compareTo(inst.name)==0) {
+			return true;
+		}
+		return false;
+	}
 }
