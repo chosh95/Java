@@ -1,12 +1,19 @@
 package phoneBook;
 
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
 import java.util.HashSet;
 import java.util.Iterator;
 import java.util.Scanner;
 
 public class PhoneBookManager {
 	
-	static Scanner sc = new Scanner(System.in);
+	private final File dataFile = new File("PhoneBook.dat");
+	Scanner sc = new Scanner(System.in);
 	private HashSet<PhoneInfo> phoneBook = new HashSet<PhoneInfo>();
 	
 	static PhoneBookManager inst =  null;
@@ -14,6 +21,10 @@ public class PhoneBookManager {
 		if(inst == null)
 			inst = new PhoneBookManager();
 		return inst;
+	}
+	
+	private PhoneBookManager() {
+		readFromFile();
 	}
 	
 	public PhoneInfo inputFriendInfo() {
@@ -110,5 +121,40 @@ public class PhoneBookManager {
 				return tmp;
 		}
 		return null;
+	}
+	
+	public void storeToFile() {
+		try {
+			FileOutputStream file = new FileOutputStream(dataFile);
+			ObjectOutputStream out = new ObjectOutputStream(file);
+			
+			Iterator<PhoneInfo> iter = phoneBook.iterator();
+			while(iter.hasNext()) 
+				out.writeObject(iter.next());
+				
+			out.close();
+			
+		}	
+		catch(IOException e) {
+			e.printStackTrace();
+		}
+	}
+	
+	public void readFromFile() {
+		if(dataFile.exists()==false) return;
+		try {
+			FileInputStream file = new FileInputStream(dataFile);
+			ObjectInputStream in = new ObjectInputStream(file);
+			
+			while(true) {
+				PhoneInfo info = (PhoneInfo)in.readObject();
+				if(info==null) break;
+				phoneBook.add(info);
+			}
+			in.close();
+		}
+		catch(Exception e) {
+			e.printStackTrace();
+		}
 	}
 }

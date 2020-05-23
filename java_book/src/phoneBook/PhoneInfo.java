@@ -1,6 +1,8 @@
 package phoneBook;
 
-public class PhoneInfo {
+import java.io.Serializable;
+
+public class PhoneInfo implements Serializable {
 
 	public String name;
 	public String phoneNumber;

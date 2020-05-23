@@ -14,7 +14,7 @@ public class phoneMain {
 	
 	public static void main(String[] args) {
 		
-		PhoneBookManager manager = new PhoneBookManager();
+		PhoneBookManager manager = PhoneBookManager.createManagerInst();
 		
 		while(true) {
 			
@@ -33,6 +33,7 @@ public class phoneMain {
 					manager.PhoneDataDelete();
 				}
 				else if(opt==INIT_MENU.EXIT) {
+					manager.storeToFile();
 					System.out.println("프로그램을 종료합니다.");
 					break;
 				}
