@@ -12,5 +12,5 @@ public class MenuChoiceException extends Exception{
 	public void showException() {
 		System.out.println(menu + "에 해당하는 선택은 존재하지 않습니다.");
 	}
-
+	
 }
